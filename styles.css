@@ -1,11 +1,15 @@
 :root {
     --color-light-gray: #E5E7EB;
     --color-dark-gray: #333333;
-    --color-black: #1c1c1c;
-    --color-light-pink: #fddee6;
+    --color-black: #1C1C1C;
+    --color-light-green: #6EDBBC;
+    --color-light-red: #FF5E5B;
+    --color-yellow: #FFED66;
+    --color-mid-blue: #374957;
 
     --font-style-poppins: 'Poppins', sans-serif;
     --font-style-pacifico: 'Pacifico', sans-serif;
+    --font-style-slackey: 'Slackey', sans-serif;
 
     --grid-cols: 1;
     --grid-rows: 1;
@@ -22,6 +26,7 @@
 
 html, body {
     height: 100%;
+    border: 2px solid red;
 }
 
 /* (100%/16px)*10 = 62.5% */
@@ -33,25 +38,81 @@ body {
     font-family: var(--font-style-poppins);
     font-size: 1.6rem; /* 16px */
     min-width: 42rem; /* 420px */
-    background-color: var(--color-light-gray);
+    background-color: var(--color-light-green);
     display: flex;
     flex-direction: column;
 }
 
 main {
+    display: flex;
+    justify-content: space-evenly;
     flex: 1; 
 }
 
-#container {
+.section {
+    border: 2px solid violet;
+}
+
+.section-two {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 800px;
+}
+
+.settings {
+    border: 2px solid black;
+}
+
+.tab {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* justify-content: space-evenly; */
+    padding: 10px;
+    background-color: var(--color-light-red);
+    width: 600px;
+    height: 600px;
+    border-radius: 2%;
+}
+
+#grid {
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    width: 10%;
+    /* width: 10%; */
+    /* padding: 10px; */
+    background-color: var(--color-light-gray);
+    /* margin-bottom: -0px; */
 }
 
 .grid-item {
-    padding: 5px;
+    padding: 14px;
     border: 1px solid var(--color-dark-gray);
+}
+
+.roller {
+    border: 2px solid blue;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    /* padding: 10px; */
+    /* margin-top: 30px; */
+    /* padding-top: 50px; */
+}
+
+h2 {
+    font-family: var(--font-style-slackey);
+    color: var(--color-yellow);
+    margin: auto;
+}
+
+.left-roller, .right-roller {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background-color: var(--color-light-gray)
 }
 
 .fa-github {
