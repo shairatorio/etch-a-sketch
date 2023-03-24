@@ -49,22 +49,27 @@ main {
     flex: 1; 
 }
 
-.section {
+.container-settings, .container-board {
     border: 2px solid violet;
 }
 
-.section-two {
+.container-settings, .container-board {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 800px;
 }
 
 .settings {
     border: 2px solid black;
+    display: flex;
+    flex-direction: column;
 }
 
-.tab {
+.container-board {
+    width: 800px;
+}
+
+.board {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -81,31 +86,26 @@ main {
     display: grid;
     grid-template-rows: repeat(var(--grid-rows), 1fr);
     grid-template-columns: repeat(var(--grid-cols), 1fr);
-    /* width: 10%; */
-    /* padding: 10px; */
     background-color: var(--color-light-gray);
-    /* margin-bottom: -0px; */
+    margin-top: 40px;
 }
 
 .grid-item {
-    padding: 14px;
+    padding: 13px;
+    width: 30px;
+    height: 25x;
     border: 1px solid var(--color-dark-gray);
 }
 
-.roller {
-    border: 2px solid blue;
+.rollers-arrows {
     width: 100%;
-    display: flex;
-    justify-content: space-between;
-    /* padding: 10px; */
-    /* margin-top: 30px; */
-    /* padding-top: 50px; */
+    margin-top: auto;
+    /* border: 2px solid green; */
 }
 
-h2 {
-    font-family: var(--font-style-slackey);
-    color: var(--color-yellow);
-    margin: auto;
+.rollers {
+    display: flex;
+    /* border: 2px solid blue; */
 }
 
 .left-roller, .right-roller {
@@ -114,6 +114,70 @@ h2 {
     border-radius: 50%;
     background-color: var(--color-light-gray)
 }
+
+h2 {
+    font-family: var(--font-style-slackey);
+    color: var(--color-yellow);
+    margin: auto;
+    /* border: 2px solid rosybrown; */
+}
+
+.arrows {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    /* border: 2px solid orange; */
+}
+
+.left, .right {
+    display: flex;
+    gap: 5px;
+    /* border: 2px solid yellow; */
+}
+
+.left {
+    margin-left: 15px;
+}
+
+.right {
+    flex-direction: column;
+    margin-right: 15px;
+}
+
+.arrow-x, .arrow-y {
+    width: 0; 
+    height: 0; 
+}
+
+.arrow-x {
+    border-top: 10px solid transparent;
+    border-bottom: 10px solid transparent;
+}
+
+.arrow-y {
+    border-left: 10px solid transparent;
+    border-right: 10px solid transparent;
+}
+
+.arrow-right {
+    border-left: 10px solid var(--color-light-gray);
+}
+
+.arrow-left {
+    border-right: 10px solid var(--color-light-gray);
+}
+
+.arrow-up {
+    border-bottom: 10px solid var(--color-light-gray);
+}
+
+.arrow-down {
+    border-top: 10px solid var(--color-light-gray);
+}
+
+/* .left-roller, .right-roller {
+    border: 1px solid var(--color-dark-gray);
+} */
 
 .fa-github {
     color: var(--color-light-gray);
