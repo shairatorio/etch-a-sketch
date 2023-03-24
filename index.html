@@ -7,29 +7,44 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Pacifico|Poppins|Slackey" />
     <!-- <link rel="icon" href="./resources/images/fist-logo.png" type="image/icon type"> -->
-    <script src="https://kit.fontawesome.com/4c536a6bd5.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/afec574008.js" crossorigin="anonymous"></script>
     <script type="text/javascript" src="script.js" defer></script>
     <title>Etch-A-Sketch</title>
 </head>
 <body>
     <main> 
-        <div class="section section-one">
+        <div class="container-settings">
             <div class="settings">
-                <button type="button" class="pencil">Pencil</button>
-                <button type="button" class="rainbow">Rainbow</button>
-                <button type="button" class="erase">Erase</button>
-                <button type="button" class="clear">Clear</button>
+                <button type="button" class="pencil"><i class="fa-solid fa-pencil"></i></button>
+                <button type="button" class="rainbow"><i class="fa-solid fa-rainbow"></i></button>
+                <button type="button" class="erase"><i class="fa-solid fa-eraser"></i></button>
+                <button type="button" class="clear"><i class="fa-regular fa-circle-xmark"></i></button>
+                <label class="slider-label" for="slider">16 x 16</label>
+                <input type="range" min="8" max="48" value="16" class="slider">
             </div>
         </div>
 
-        <div class="section section-two">
-            <div class="tab">
+        <div class="container-board">
+            <div class="board">
                 <div id="grid"></div>
-                <div class="roller">
-                    <div class="left-roller"></div>
-                    <h2>Etch A Sketch</h2>
-                    <div class="right-roller"></div>
+                <div class="rollers-arrows">
+                    <div class="arrows">
+                        <div class="left">
+                            <div class="arrow-x arrow-left"></div>
+                            <div class="arrow-x arrow-right"></div>
+                        </div>
+                        <div class="right">
+                            <div class="arrow-y arrow-up"></div>
+                            <div class="arrow-y arrow-down"></div>
+                        </div>
+                    </div>
+                    <div class="rollers">
+                        <div class="left-roller"></div>
+                        <h2>Etch A Sketch</h2>
+                        <div class="right-roller"></div>
+                    </div>
                 </div>
+                
             </div>
             
         </div>
