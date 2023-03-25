@@ -26,7 +26,7 @@
 
 html, body {
     height: 100%;
-    border: 2px solid red;
+    /* border: 2px solid red; */
 }
 
 /* (100%/16px)*10 = 62.5% */
@@ -50,7 +50,7 @@ main {
 }
 
 .container-settings, .container-board {
-    border: 2px solid violet;
+    /* border: 2px solid violet; */
 }
 
 .container-settings, .container-board {
@@ -60,9 +60,74 @@ main {
 }
 
 .settings {
-    border: 2px solid black;
+    /* border: 2px solid black; */
     display: flex;
     flex-direction: column;
+}
+
+button,
+input[type='color'] {
+    margin-bottom: 10px;
+    transition: transform 0.1s ease-in-out;
+}
+
+button:hover,
+input[type='color']:hover {
+    transform: scale(1.05);
+}
+
+input[type='color']:active {
+    transition: transform 0.05s ease-in-out;
+    transform: scale(1);
+}
+
+input[type='color'] {
+  /* -webkit-appearance: none; */
+    width: 80px;
+    height: 80px;
+    border: none;
+    align-self: center;
+}
+
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+    background-color: var(--color-light-green);
+}
+
+input[type='color']::-webkit-color-swatch {
+    border: none;
+    border-radius: 50px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+button[type='button'] {
+    padding: 15px;
+    border-radius: 5px; 
+    border-style: none;
+    width: 180px;
+    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.5);
+}
+
+.fa-solid, .fa-regular {
+    color: var(--color-mid-blue);
+}
+
+.slider-label {
+    text-align: center;
+    font-size: 20px;
+    font-family: var(--font-style-slackey);
+    color: var(--color-mid-blue);
+}
+
+.board, .rollers-arrows, .arrows-grid, 
+.arrows, #grid, .left, .right {
+    /* border: 2px solid yellow; */
+}
+
+.arrows-grid {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
 }
 
 .container-board {
@@ -97,14 +162,10 @@ main {
     border: 1px solid var(--color-dark-gray);
 }
 
-.rollers-arrows {
-    width: 100%;
-    margin-top: auto;
-    /* border: 2px solid green; */
-}
-
 .rollers {
     display: flex;
+    width: 100%;
+    margin-top: 10px;
     /* border: 2px solid blue; */
 }
 
@@ -122,13 +183,6 @@ h2 {
     /* border: 2px solid rosybrown; */
 }
 
-.arrows {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 10px;
-    /* border: 2px solid orange; */
-}
-
 .left, .right {
     display: flex;
     gap: 5px;
@@ -136,12 +190,12 @@ h2 {
 }
 
 .left {
-    margin-left: 15px;
+    margin-right: 15px;
 }
 
 .right {
     flex-direction: column;
-    margin-right: 15px;
+    margin-left: 15px;
 }
 
 .arrow-x, .arrow-y {
