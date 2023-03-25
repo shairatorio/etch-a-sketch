@@ -15,10 +15,11 @@
     <main> 
         <div class="container-settings">
             <div class="settings">
-                <button type="button" class="pencil"><i class="fa-solid fa-pencil"></i></button>
-                <button type="button" class="rainbow"><i class="fa-solid fa-rainbow"></i></button>
-                <button type="button" class="erase"><i class="fa-solid fa-eraser"></i></button>
-                <button type="button" class="clear"><i class="fa-regular fa-circle-xmark"></i></button>
+                <input type="color" id="color" value="#333333">
+                <button type="button" class="pencil"><i class="fa-solid fa-pencil fa-lg"></i></button>
+                <button type="button" class="rainbow"><i class="fa-solid fa-rainbow fa-lg"></i></button>
+                <button type="button" class="erase"><i class="fa-solid fa-eraser fa-lg"></i></button>
+                <button type="button" class="clear"><i class="fa-solid fa-circle-xmark fa-lg"></i></button>
                 <label class="slider-label" for="slider">16 x 16</label>
                 <input type="range" min="8" max="48" value="16" class="slider">
             </div>
@@ -26,27 +27,23 @@
 
         <div class="container-board">
             <div class="board">
-                <div id="grid"></div>
-                <div class="rollers-arrows">
-                    <div class="arrows">
-                        <div class="left">
-                            <div class="arrow-x arrow-left"></div>
-                            <div class="arrow-x arrow-right"></div>
-                        </div>
-                        <div class="right">
-                            <div class="arrow-y arrow-up"></div>
-                            <div class="arrow-y arrow-down"></div>
-                        </div>
+                <div class="arrows-grid">
+                    <div class="left">
+                        <div class="arrow-x arrow-left"></div>
+                        <div class="arrow-x arrow-right"></div>
                     </div>
-                    <div class="rollers">
-                        <div class="left-roller"></div>
-                        <h2>Etch A Sketch</h2>
-                        <div class="right-roller"></div>
+                    <div id="grid"></div>
+                    <div class="right">
+                        <div class="arrow-y arrow-up"></div>
+                        <div class="arrow-y arrow-down"></div>
                     </div>
                 </div>
-                
+                <div class="rollers">
+                    <div class="left-roller"></div>
+                    <h2>Etch A Sketch</h2>
+                    <div class="right-roller"></div>
+                </div>         
             </div>
-            
         </div>
     </main>
     <footer class="footer">
