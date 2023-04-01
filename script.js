@@ -1,15 +1,16 @@
-let grid = document.getElementById("grid");
+let grid = document.querySelector("#grid");
 let gridSize = 16;
 
-let colorPicker = document.getElementById("colorPicker");
-let btnPencil =  document.getElementById("btnPencil");
-let btnRainbow =  document.getElementById("btnRainbow");
-let btnErase =  document.getElementById("btnErase");
-let btnClear =  document.getElementById("btnClear");
-let sliderLabel = document.getElementById("sliderLabel");
-let slider = document.getElementById("slider");
+let colorPicker = document.querySelector("#colorPicker");
+let btnPencil =  document.querySelector("#btnPencil");
+let btnRainbow =  document.querySelector("#btnRainbow");
+let btnErase =  document.querySelector("#btnErase");
+let btnClear =  document.querySelector("#btnClear");
+let sliderLabel = document.querySelector("#sliderLabel");
+let slider = document.querySelector("#slider");
 
 let gridBorderColor = getComputedStyle(document.documentElement).getPropertyValue('--color-light-gray');
+let eraseColor = getComputedStyle(document.documentElement).getPropertyValue('--color-white');
 
 function createGrid(size) {
   for (let i = 1; i <= size * size; i++) {
@@ -32,39 +33,52 @@ function updateSliderLabel() {
   sliderLabel.innerText = `${slider.value} x ${slider.value}`;
 };
 
-// colorPicker
-
-function clickBtnPencil() {
-  removeActiveButtons();
-
-  btnPencil.classList.add("active-button");
+function removeActiveButton(btnTypeOne, btnTypeTwo) {
+    btnTypeOne.classList.remove("active-button");
+    btnTypeTwo.classList.remove("active-button");
 }
 
-function clickBtnRainbow() {
-  removeActiveButtons();
+function clickButton(btnType) {
+  switch (btnType) {
+    case 'pencil':
+      removeActiveButton(btnRainbow,btnErase);
+      btnPencil.classList.add("active-button");
 
-  btnRainbow.classList.add("active-button");
+      addGlobalEventListener("mouseover", ".cell", e => {
+        e.target.style.background = colorPicker.value;
+      });
+    break;
+
+    case 'rainbow':
+      removeActiveButton(btnPencil,btnErase);
+      btnRainbow.classList.add("active-button");
+    break;
+
+    case 'erase':
+      removeActiveButton(btnPencil,btnRainbow);
+      btnErase.classList.add("active-button");
+
+      addGlobalEventListener("mouseover", ".cell", e => {
+        e.target.style.background = eraseColor;
+      });
+    break;
+  }
 }
-
-function clickBtnErase() {
-  removeActiveButtons();
-
-  btnErase.classList.add("active-button");
-}
-
-function removeActiveButtons() {
-  btnPencil.classList.remove("active-button");
-  btnRainbow.classList.remove("active-button");
-  btnErase.classList.remove("active-button");
-}
-
+  
 // clear
 
-slider.addEventListener("input", (e) => updateSliderLabel(e.target.value));
-slider.addEventListener("input", (e) => updateSizeGrid(e.target.value));
-btnPencil.addEventListener("click", (e) => clickBtnPencil(e.target.value));
-btnRainbow.addEventListener("click", (e) => clickBtnRainbow(e.target.value));
-btnErase.addEventListener("click", (e) => clickBtnErase(e.target.value));
+function addGlobalEventListener(type, selector, callback) {
+  document.addEventListener(type, e => {
+    if(e.target.matches(selector)) callback(e)
+  })
+}
+
+addGlobalEventListener("click", "button", e => clickButton(e.target.classList[0]));
+
+addGlobalEventListener("change", "input", e => {
+  updateSliderLabel(e.target.value)
+  updateSizeGrid(e.target.value)
+});
 
 window.onload = () => {
   createGrid(gridSize);
