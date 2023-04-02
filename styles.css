@@ -104,7 +104,11 @@ main {
 .active-button {
     background-color: var(--color-yellow);
     transform: scale(1.05);
-    
+}
+
+#btnClear:active {
+    background-color: var(--color-yellow);
+    transform: scale(1.05);
 }
 
 .fa-solid, .fa-regular {
