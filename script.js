@@ -33,15 +33,16 @@ function updateSliderLabel() {
   sliderLabel.innerText = `${slider.value} x ${slider.value}`;
 };
 
-function removeActiveButton(btnTypeOne, btnTypeTwo) {
+function removeActiveButton(btnTypeOne, btnTypeTwo, btnTypeThree) {
     btnTypeOne.classList.remove("active-button");
     btnTypeTwo.classList.remove("active-button");
+    btnTypeThree.classList.remove("active-button");
 }
 
 function clickButton(btnType) {
   switch (btnType) {
     case 'pencil':
-      removeActiveButton(btnRainbow,btnErase);
+      removeActiveButton(btnRainbow, btnErase, btnClear);
       btnPencil.classList.add("active-button");
 
       addGlobalEventListener("mouseover", ".cell", e => {
@@ -50,22 +51,44 @@ function clickButton(btnType) {
     break;
 
     case 'rainbow':
-      removeActiveButton(btnPencil,btnErase);
+      removeActiveButton(btnPencil, btnErase, btnClear);
       btnRainbow.classList.add("active-button");
+
+      addGlobalEventListener("mouseover", ".cell", e => {
+        e.target.style.background = randomColor();
+      });
     break;
 
     case 'erase':
-      removeActiveButton(btnPencil,btnRainbow);
+      removeActiveButton(btnPencil, btnRainbow, btnClear);
       btnErase.classList.add("active-button");
 
       addGlobalEventListener("mouseover", ".cell", e => {
         e.target.style.background = eraseColor;
       });
     break;
+
+    case 'clear':
+      removeActiveButton(btnPencil, btnRainbow, btnErase);
+
+      const cells = document.querySelectorAll('.cell');
+      cells.forEach((cell) => {
+        cell.style.background = eraseColor;
+      });
+    break;
   }
 }
-  
-// clear
+
+function randomColor() {
+  let color = '#';
+  const digits = '0123456789ABCDEF';
+
+  for (let i = 0; i < 6; i++) {
+    color += digits[Math.floor(Math.random() * 16)];
+  }
+
+  return color;
+}
 
 function addGlobalEventListener(type, selector, callback) {
   document.addEventListener(type, e => {
@@ -75,7 +98,7 @@ function addGlobalEventListener(type, selector, callback) {
 
 addGlobalEventListener("click", "button", e => clickButton(e.target.classList[0]));
 
-addGlobalEventListener("change", "input", e => {
+addGlobalEventListener("change", ".slider", e => {
   updateSliderLabel(e.target.value)
   updateSizeGrid(e.target.value)
 });
