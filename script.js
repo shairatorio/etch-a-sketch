@@ -8,6 +8,8 @@ let btnErase =  document.querySelector("#btnErase");
 let btnClear =  document.querySelector("#btnClear");
 let sliderLabel = document.querySelector("#sliderLabel");
 let slider = document.querySelector("#slider");
+let leftRoller = document.querySelector(".left-roller");
+let rightRoller = document.querySelector(".right-roller");
 
 let gridBorderColor = getComputedStyle(document.documentElement).getPropertyValue('--color-light-gray');
 let eraseColor = getComputedStyle(document.documentElement).getPropertyValue('--color-white');
@@ -48,6 +50,7 @@ function clickButton(btnType) {
       addGlobalEventListener("mouseover", ".cell", e => {
         e.target.style.background = colorPicker.value;
       });
+      
     break;
 
     case 'rainbow':
@@ -90,6 +93,11 @@ function randomColor() {
   return color;
 }
 
+function rotateRollers() {
+  leftRoller.classList.toggle("rotate");
+  rightRoller.classList.toggle("rotate");
+}
+
 function addGlobalEventListener(type, selector, callback) {
   document.addEventListener(type, e => {
     if(e.target.matches(selector)) callback(e)
@@ -101,6 +109,10 @@ addGlobalEventListener("click", "button", e => clickButton(e.target.classList[0]
 addGlobalEventListener("change", ".slider", e => {
   updateSliderLabel(e.target.value)
   updateSizeGrid(e.target.value)
+});
+
+addGlobalEventListener("mousemove", ".cell", e => {
+  rotateRollers();
 });
 
 window.onload = () => {
