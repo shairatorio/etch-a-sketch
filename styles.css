@@ -12,9 +12,9 @@
     --font-style-pacifico: 'Pacifico', sans-serif;
     --font-style-slackey: 'Slackey', sans-serif;
 
-    --arrow-size: 10px;
-    --arrow-size-480: 5px;
-    --arrow-size-768: 10px;
+    --arrow-size: 1rem;
+    --arrow-size-480: 0.5rem;
+    --arrow-size-768: 1rem;
 }
 
 *,
@@ -28,6 +28,7 @@
 
 html, body {
     height: 100%;
+    overflow: auto;
 }
 
 /* (100%/16px)*10 = 62.5% */
@@ -38,7 +39,6 @@ html {
 body {
     font-family: var(--font-style-poppins);
     font-size: 1.6rem; /* 16px */
-    min-width: 32rem; /* 320px */
     background-color: var(--color-light-green);
     display: flex;
     flex-direction: column;
@@ -54,7 +54,6 @@ main {
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid blueviolet; */
 }
 
 .settings {
@@ -63,7 +62,7 @@ main {
 }
 
 .buttons, .color-picker {
-    margin-bottom: 10px;
+    margin-bottom: 1rem;
     transition: transform 0.1s ease-in-out;
     cursor: pointer;
 }
@@ -79,8 +78,8 @@ main {
 
 .color-picker {
     -webkit-appearance: none;
-    width: 80px;
-    height: 80px;
+    width: 8rem;
+    height: 8rem;
     border: none;
     align-self: center;
 }
@@ -92,16 +91,16 @@ main {
 
 .color-picker::-webkit-color-swatch {
     border: none;
-    border-radius: 50px;
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    border-radius: 5rem;
+    box-shadow: rgba(0, 0, 0, 0.24) 0 0.3rem 0.8rem;
 }
 
 .buttons {
-    padding: 15px;
-    border-radius: 5px; 
+    padding: 1.5rem;
+    border-radius: 0.5rem;
     border-style: none;
-    width: 180px;
-    box-shadow: 0px 3px 3px 0px rgba(0, 0, 0, 0.5);
+    width: 18rem;
+    box-shadow: 0 0.3rem 0.3rem 0 rgba(0, 0, 0, 0.5);
 }
 
 .active-button {
@@ -120,30 +119,30 @@ main {
 
 .slider-label {
     text-align: center;
-    font-size: 20px;
+    font-size: 2rem;
     font-family: var(--font-style-slackey);
     color: var(--color-mid-blue);
-    margin-top: 5px;
+    margin-top: 0.5rem;
 }
 
 .slider {
     -webkit-appearance: none;
     width: 100%;
-    height: 8px;
-    border-radius: 5px;  
+    height: 0.8rem;
+    border-radius: 0.5rem; 
     background: var(--color-white);
     outline: none;
     opacity: 0.7;
     -webkit-transition: .2s;
     transition: opacity .2s;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
   
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none;
     appearance: none;
-    width: 23px;
-    height: 23px;
+    width: 2.3rem;
+    height: 2.3rem;
     border-radius: 50%; 
     background: var(--color-mid-blue);
     cursor: pointer;
@@ -153,7 +152,6 @@ main {
     display: flex;
     flex-direction: row;
     align-items: flex-end;
-
 }
 
 .board {
@@ -162,40 +160,38 @@ main {
     justify-content: center;
     align-items: center;
     justify-content: space-evenly;
-    padding: 10px;
+    padding: 1rem;
     background-color: var(--color-light-red);
-    width: 600px;
-    height: 600px;
+    width: 60rem;
+    height: 60rem;
     border-radius: 2%;
 }
 
 #grid {
     display: flex;
     flex-wrap: wrap;
-    width: 500px;
-    height: 450px;
+    width: 100%;
+    height: 45rem;
     justify-content: space-evenly;
     background-color: var(--color-white);
-    /* border: 2px solid red; */
 }
 
 .arrows-grid {
-    /* border: 2px solid red; */
-    margin-top: 35px;
+    margin-top: 3.5rem;
 }
 
 .rollers {
     display: flex;
     width: 100%;
-    margin-top: 10px;
+    margin-top: 1rem;
 }
 
 .left-roller, .right-roller {
-    width: 70px;
-    height: 70px;
+    width: 7rem;
+    height: 7rem;
     border-radius: 50%;
     background-color: var(--color-light-gray);
-    border : 5px dashed var(--color-mid-blue);
+    border : 0.5rem dashed var(--color-mid-blue);
 }
 
 .rotate {
@@ -203,33 +199,31 @@ main {
  }
 
 .left-roller {
-    margin-left: 10px;
+    margin-left: 1rem;
 }
 
 .right-roller {
-    margin-right: 10px;
+    margin-right: 1rem;
 }
 
 h2 {
     font-family: var(--font-style-slackey);
     color: var(--color-yellow);
     margin: auto;
-    /* border: 2px solid rosybrown; */
 }
 
 .left, .right {
     display: flex;
-    gap: 5px;
-    /* border: 2px solid yellow; */
+    gap: 0.5rem;
 }
 
 .left {
-    margin-right: 14px;
+    margin-right: 1.4rem;
 }
 
 .right {
     flex-direction: column;
-    margin-left: 14px;
+    margin-left: 1.4rem;
 }
 
 .arrow-x, .arrow-y {
@@ -265,7 +259,7 @@ h2 {
 
 .fa-github {
     color: var(--color-light-gray);
-    font-size: 2rem; /* 20px */
+    font-size: 2rem;
     transition: transform 0.3s ease-in-out;
 }
   
@@ -289,52 +283,44 @@ h2 {
 /* ================================================================= */
 /* Media Queries */
 
-/* 480px / 16px = 30em */
 /* Media query for screens with a maximum width of 480px */
-@media only screen and (max-width: 30em) {
+@media only screen and (max-width: 480px) {
 /* Styles for small mobile devices */
-    html {
-        font-size: 54%; 
-    }
-
     main {
         display: flex;
         flex-direction: column;
     }
 
     .container-settings, .container-board {
-        margin: 10px 5px 10px 5px;
+        margin: 1rem 0.5rem 1rem 0.5rem;
     }
 
     .board {
         width: 100%;
-        height: 350px;
+        height: 35rem;
     }
 
     h2 {
-        font-family: var(--font-style-slackey);
-        color: var(--color-yellow);
-        margin: auto;
-        font-size: 15px;
+        font-size: 1.5rem
     }
 
     #grid {
         width: 100%;
-        height: 250px;
+        height: 25rem;
     }
 
     .left-roller, .right-roller {
-        width: 30px;
-        height: 30px;
+        width: 3rem;
+        height: 3rem;
     }
 
     .left {
-        margin-right: 6px;
+        margin-right: 0.6rem;
     }
     
     .right {
         flex-direction: column;
-        margin-left: 6px;
+        margin-left: 0.6rem;
     }
 
     .arrow-x {
@@ -363,48 +349,47 @@ h2 {
         border-top: var(--arrow-size-480) solid var(--color-light-gray);
     }
 
-}
-    
-/* 481px / 16px = 30.0625em */
-/* 768px / 16px = 48em */
-/* Media query for screens with a minimum width of 481px and a maximum width of 768px */
-@media only screen and (min-width: 30.6em) and (max-width: 48em) {
-/* Styles for medium mobile devices and tablets */
-    html {
-        font-size: 56%; 
+    .footer {
+        font-size: 1.2rem;
+        padding: 0.7rem;
     }
 
+}
+    
+/* Media query for screens with a minimum width of 481px and a maximum width of 768px */
+@media only screen and (min-width: 481px) and (max-width: 768px) {
+/* Styles for medium mobile devices and tablets */
     main {
         display: flex;
         flex-direction: column;
     }
 
     .container-settings, .container-board {
-        margin: 10px 5px 10px 5px;
+        margin: 1rem 0.5rem 1rem 0.5rem;
     }
 
     .board {
-        width: 500px;
-        height: 500px;
+        width: 50rem;
+        height: 50rem;
     }
 
     #grid {
-        width: 400px;
-        height: 350px;
+        width: 100%;
+        height: 35rem;
     }
 
     .left-roller, .right-roller {
-        width: 60px;
-        height: 60px;
+        width: 6rem;
+        height: 6rem;
     }
 
     .left {
-        margin-right: 14px;
+        margin-right: 1.4rem;
     }
     
     .right {
         flex-direction: column;
-        margin-left: 14px;
+        margin-left: 1.4rem;
     }
 
     .arrow-x {
@@ -432,31 +417,23 @@ h2 {
     .arrow-down {
         border-top: var(--arrow-size-768) solid var(--color-light-gray);
     }
+
+    .footer {
+        font-size: 1.3rem;
+        padding: 0.8rem;
+    }
 }
 
-/* 769px / 16px = 48.0625em */
-/* 1024px / 16px = 64em */
 /* Media query for screens with a minimum width of 769px and a maximum width of 1024px */
-@media only screen and (min-width: 48.6em) and (max-width: 64em) {
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
 /* Styles for smaller desktop devices and laptops */
-    html {
-        font-size: 58%;
+    .container-settings, .container-board {
+        margin: 1rem 0.5rem 1rem 0.5rem;
     }
 }
 
-/* 1025px / 16px = 64.0625emem */
 /* Media query for screens with a minimum width of 1025px */
-@media only screen and (min-width: 64.6em) {
+@media only screen and (min-width: 1025px) {
 /* Styles for larger desktop devices and wide screens */
-    html {
-        font-size: 60%; 
-    }
 }
-
-/* @media only screen
-and (max-width: 30em),
-(min-width: 30.6em) and (max-width: 48em), 
-(min-width: 48.6em) and (max-width: 64em),
-(min-width: 64.6em) {
-} */
 
