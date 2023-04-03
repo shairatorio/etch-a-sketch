@@ -303,7 +303,6 @@ h2 {
     }
 
     .container-settings, .container-board {
-        border: 1px solid violet;
         margin: 10px 5px 10px 5px;
     }
 
@@ -381,7 +380,6 @@ h2 {
     }
 
     .container-settings, .container-board {
-        border: 1px solid blue;
         margin: 10px 5px 10px 5px;
     }
 
@@ -443,10 +441,6 @@ h2 {
 /* Styles for smaller desktop devices and laptops */
     html {
         font-size: 58%;
-    }
-
-    .container-settings, .container-board {
-        border: 1px solid yellow;
     }
 }
 
