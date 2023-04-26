@@ -39,20 +39,20 @@ function clickButton(btnType) {
     case 'color-picker':
     case 'slider':
       btnPencil.focus();
-      break;
+    break;
     case 'rainbow':
       btnRainbow.focus();
-      break;
+    break;
     case 'erase':
       btnErase.focus();
-      break;
+    break;
     case 'clear':
       const cells = document.querySelectorAll('.cell');
       cells.forEach((cell) => {
         cell.style.background = eraseColor;
       });
       btnPencil.focus();
-      break;
+    break;
   }
 }
 
@@ -60,13 +60,13 @@ addGlobalEventListener("mouseover", ".cell", e => {
   switch (document.activeElement.id) {
     case 'btnPencil':
       e.target.style.background = colorPicker.value;
-      break;
+    break;
     case 'btnRainbow':
       e.target.style.background = randomColor();
-      break;
+    break;
     case 'btnErase':
       e.target.style.background = eraseColor;
-      break;
+    break;
   }
 });
 
