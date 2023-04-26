@@ -10,7 +10,7 @@ Developed an Etch A Sketch Web Application using HTML, CSS and Javascript for my
 
 The Etch A Sketch app that allows users to draw and sketch using a cursor controlled by the mouse. The application is inspired by the classic children's toy, but instead of using arrow keys, the user controls the cursor using the mouse pointer.
 
-## Feature
+## Features
 
 * **Color Picker** - This feature allows users to choose from a variety of different colors to draw with. By clicking on the color picker, users can access a color palette and select their desired color to draw with.
 
@@ -23,6 +23,7 @@ The Etch A Sketch app that allows users to draw and sketch using a cursor contro
 * **Slider** - This feature adjusts the size of the grid on the drawing area. By moving the slider left or right, users can create a larger or smaller grid for their drawing. This feature is useful for creating different levels of detail in the user's drawing, depending on the size of the grid.
 
 ## Tools
+
 * Visual Studio Code
 * Gitbash terminal
 * Git and GitHub
